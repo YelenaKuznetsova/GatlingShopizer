@@ -9,7 +9,7 @@ class PerfTestSimulation extends Simulation {
   //mvn gatling:test
 
   setUp(
-    scnShopizerDemo.inject(atOnceUsers(1))
+    scnShopizerDemo.inject(rampConcurrentUsers(1).to(5).during(600))
   ).protocols(httpProtocol)
 
 

@@ -11,8 +11,8 @@ import scala.language.postfixOps
 
 
 object Feeders {
-  val feeder: BatchableFeederBuilder[String] = csv("feeders/productNumber.csv").queue.eager
-  val feeder2: BatchableFeederBuilder[String] = csv("feeders/chairNumber.csv").queue.eager
+  val feeder: BatchableFeederBuilder[String] = csv("feeders/productNumber.csv").circular.eager
+  val feeder2: BatchableFeederBuilder[String] = csv("feeders/chairNumber.csv").circular.eager
 }
 
 object ShopizerScenario {
